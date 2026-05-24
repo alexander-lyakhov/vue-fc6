@@ -13,19 +13,19 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +25 E:/Develop/Web/.Vue/vue-FC-6/src/App.vue
+badd +31 src/App.vue
 badd +18 E:/Develop/Web/.Vue/vue-FC-6/src/components/header-nav.vue
 badd +1 E:/Develop/Web/.Vue/vue-FC-6/src/components/selector.vue
-badd +0 E:/Develop/Web/.Vue/vue-FC-6/src/defs/index.ts
+badd +1 E:/Develop/Web/.Vue/vue-FC-6/src/defs/index.ts
+badd +11 E:/Develop/Web/.Vue/vue-FC-6/src/views/home.vue
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit E:/Develop/Web/.Vue/vue-FC-6/src/App.vue
+edit src/App.vue
 argglobal
-balt E:/Develop/Web/.Vue/vue-FC-6/src/App.vue
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -36,16 +36,16 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 25 - ((24 * winheight(0) + 19) / 39)
+let s:l = 31 - ((26 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 25
+keepjumps 31
 normal! 0
 tabnext
 edit E:/Develop/Web/.Vue/vue-FC-6/src/components/header-nav.vue
 argglobal
-balt E:/Develop/Web/.Vue/vue-FC-6/src/App.vue
+balt src/App.vue
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -56,16 +56,16 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 18 - ((17 * winheight(0) + 19) / 39)
+let s:l = 17 - ((16 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 18
-normal! 037|
+keepjumps 17
+normal! 0
 tabnext
 edit E:/Develop/Web/.Vue/vue-FC-6/src/components/selector.vue
 argglobal
-balt E:/Develop/Web/.Vue/vue-FC-6/src/App.vue
+balt src/App.vue
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -85,7 +85,7 @@ normal! 03|
 tabnext
 edit E:/Develop/Web/.Vue/vue-FC-6/src/defs/index.ts
 argglobal
-balt E:/Develop/Web/.Vue/vue-FC-6/src/App.vue
+balt src/App.vue
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
