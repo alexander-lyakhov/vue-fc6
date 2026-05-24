@@ -1,19 +1,16 @@
-﻿<template functional>
+﻿<template>
   <li class="list-item simple" :key="props.item.id">
-    <a href="#">{{ props.item.title }}</a>
+    <a href="#">{{ item.title }}</a>
   </li>
 </template>
 
-<script>
+<script setup lang="ts">
+  // @@@ @js@
+  import { ref } from 'vue';
 
-export default {
-  name: 'list-item',
-
-  props: {
-    item: {
-      type: Object,
-      default: () => ({})
-    }
-  }
-}
+  const props = defineProps<{ item: object }>();
 </script>
+
+<style lang="scss" scoped>
+/* @@@ @SCSS@ */
+</style>

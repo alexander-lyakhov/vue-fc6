@@ -13,11 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +31 src/App.vue
+badd +27 src/App.vue
 badd +18 E:/Develop/Web/.Vue/vue-FC-6/src/components/header-nav.vue
-badd +1 E:/Develop/Web/.Vue/vue-FC-6/src/components/selector.vue
-badd +1 E:/Develop/Web/.Vue/vue-FC-6/src/defs/index.ts
-badd +11 E:/Develop/Web/.Vue/vue-FC-6/src/views/home.vue
+badd +9 E:/Develop/Web/.Vue/vue-FC-6/src/components/selector.vue
+badd +1 src/views/ex1.vue
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -36,12 +35,32 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 31 - ((26 * winheight(0) + 19) / 39)
+let s:l = 27 - ((22 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 31
+keepjumps 27
 normal! 0
+tabnext
+edit src/views/ex1.vue
+argglobal
+balt src/App.vue
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 51 - ((29 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 51
+normal! 010|
 tabnext
 edit E:/Develop/Web/.Vue/vue-FC-6/src/components/header-nav.vue
 argglobal
@@ -82,26 +101,6 @@ keepjumps exe s:l
 normal! zt
 keepjumps 9
 normal! 03|
-tabnext
-edit E:/Develop/Web/.Vue/vue-FC-6/src/defs/index.ts
-argglobal
-balt src/App.vue
-setlocal foldmethod=manual
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
