@@ -4,9 +4,6 @@
 
 <script setup lang="ts">
   // @@@ @js@
-  const emit = defineEmits<{
-    change: [value: number]
-  }>()
   const model = defineModel<number>()
 
   function isSelected(index = -1) {
@@ -15,7 +12,6 @@
 
   function toggleSelect(value: number) {
     model.value = value;
-    emit('change', value)
   }
 </script>
 

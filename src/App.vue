@@ -9,17 +9,24 @@
         <header-nav v-model="selectedPageIndex" :options="pages" />
       </nav>
     </header>
+    <keep-alive>
+      <component :is="view" />
+    </keep-alive>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { ref, computed } from 'vue';
-  import headerNav         from './components/header-nav.vue'
-  import { pages }         from './defs';
+  import { ref, computed, type Component } from 'vue';
+  import headerNav                         from '@/components/header-nav.vue'
+  import Home                              from '@/views/home.vue'
+  import { pages}                          from '@/defs';
 
   const selectedPageIndex = ref<number>(0);
 
-  const selectedPage = computed(() => pages[selectedPageIndex.value])
-</script>
+  const views: Record<string, Component> = {
+    home: Home,
+  }
 
-<style scoped></style>
+  const selectedPage = computed(() => pages[selectedPageIndex.value])
+  const view = computed(() => views[selectedPage.value!.value])
+</script>
