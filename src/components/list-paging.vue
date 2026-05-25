@@ -8,56 +8,57 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+  // @@@ @js@
+  import { computed }            from 'vue'
+  import type { ListPagination } from '@/types'
 
-export default {
-  name: 'list-paging',
+  const model = defineModel<ListPagination>()
 
-  props: {
-    value: {
-      type: Object,
-      default: () => ({})
+  /**
+  *** @@@ Computed
+  **/
+  const flags = computed(() => {
+    return {
+      BOF: model.value!.offset === 0,
+      EOF: model.value!.offset + model.value!.limit >= model.value!.total
     }
-  },
+  })
 
-  model: {
-    value: 'value',
-    event: 'change'
-  },
+  const progress = computed(() => {
+    return `${model.value!.offset / model.value!.limit + 1} / ${Math.ceil(model.value!.total / model.value!.limit)}`
+  })
 
-  computed: {
-    flags() {
-      return {
-        BOF: this.value.offset === 0,
-        EOF: this.value.offset + this.value.size >= this.value.total
+  /**
+  *** @@@ Methods
+  **/
+  // =============================================================================
+  // @@@ [ M ] prev
+  // =============================================================================
+  function prev() {
+    if (model.value && !flags.value.BOF) {
+      const {offset, limit, total} = model.value
+
+      model.value = {
+        offset: offset - limit,
+        limit,
+        total,
       }
-    },
-
-    progress() {
-      return `${this.value.offset / this.value.size + 1} / ${Math.ceil(this.value.total / this.value.size)}`
-    }
-  },
-
-  methods: {
-    prev() {
-      const {offset, size, total} = this.value
-
-      !this.flags.BOF && this.$emit('change', {
-        offset: offset - size,
-        size,
-        total
-      })
-    },
-
-    next() {
-      const {offset, size, total} = this.value
-
-      !this.flags.EOF && this.$emit('change', {
-        offset: offset + size,
-        size,
-        total
-      })
     }
   }
-}
+
+  // =============================================================================
+  // @@@ [ M ] next
+  // =============================================================================
+  function next() {
+    if (model.value && !flags.value.EOF) {
+      const {offset, limit, total} = model.value
+
+      model.value = {
+        offset: offset + limit,
+        limit,
+        total,
+      }
+    }
+  }
 </script>

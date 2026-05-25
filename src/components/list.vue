@@ -15,11 +15,7 @@
 </template>
 
 <script setup lang="ts">
-  type Movie = {
-    id:    number;
-    title: string;
-    genre: string;
-  }
+  import type { Movie } from '@/types'
 
   const props = defineProps<{
     title?:    string;

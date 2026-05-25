@@ -13,12 +13,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +27 src/App.vue
+badd +33 src/App.vue
 badd +18 E:/Develop/Web/.Vue/vue-FC-6/src/components/header-nav.vue
 badd +9 E:/Develop/Web/.Vue/vue-FC-6/src/components/selector.vue
-badd +1 src/views/ex1.vue
+badd +59 src/views/ex1.vue
+badd +18 E:/Develop/Web/.Vue/vue-FC-6/src/components/list.vue
+badd +1 src/components/list-paging.vue
 argglobal
 %argdel
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
@@ -35,11 +39,11 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 27 - ((22 * winheight(0) + 19) / 39)
+let s:l = 33 - ((28 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 27
+keepjumps 33
 normal! 0
 tabnext
 edit src/views/ex1.vue
@@ -55,12 +59,85 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 51 - ((29 * winheight(0) + 19) / 39)
+let s:l = 59 - ((20 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 51
-normal! 010|
+keepjumps 59
+normal! 031|
+tabnext
+edit src/components/list-paging.vue
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 134 + 78) / 157)
+exe 'vert 2resize ' . ((&columns * 22 + 78) / 157)
+argglobal
+balt src/App.vue
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 39 - ((38 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 39
+normal! 03|
+wincmd w
+argglobal
+enew
+balt src/components/list-paging.vue
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+wincmd w
+exe 'vert 1resize ' . ((&columns * 134 + 78) / 157)
+exe 'vert 2resize ' . ((&columns * 22 + 78) / 157)
+tabnext
+edit E:/Develop/Web/.Vue/vue-FC-6/src/components/list.vue
+argglobal
+balt src/App.vue
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 18 - ((17 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 18
+normal! 033|
 tabnext
 edit E:/Develop/Web/.Vue/vue-FC-6/src/components/header-nav.vue
 argglobal

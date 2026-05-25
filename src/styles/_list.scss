@@ -1,0 +1,73 @@
+﻿.list {
+  color: $list-fc;
+  background: $list-bg;
+  border: 1px solid $list-title-bg;
+  /*outline: 2px solid $fc-accent;
+  outline-offset: 4px;*/
+  // flex: 512px 0 1;
+  width: 100%;
+  // margin: 0 .75rem 2rem;
+  position: relative;
+
+  &-title {
+    font-size: 1.25rem;
+    color: $list-title-fc;
+    background: $list-title-bg;
+    line-height: 3rem;
+    padding: 0 .5rem;
+  }
+
+  &-nav {
+    padding: 0 .5rem;
+
+    &__menu {
+      @extend .noselect;
+      font-size: .875rem;
+      color: $list-nav-fc;
+      border-bottom: 2px solid $fc-middle;
+      line-height: 2.5rem;
+
+      span {
+        border-bottom: 2px solid trasparent;
+        display: inline-block;
+        margin: 0 1rem -2px 0;
+        cursor: pointer;
+
+        &.selected {
+          color: $list-nav-selected-fc;
+          border-bottom: 2px solid $fc-primary;
+        }
+      }
+    }
+  }
+
+  &-body {
+    min-height: 64px;
+    padding: .5rem;
+  }
+
+  &-paging {
+    padding: 0 .5rem;
+
+    & > div {
+      color: $fc-secondary;
+      border-top: 1px solid $fc-middle;
+      font-size: .75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 2.5rem;
+
+      a {
+        &.disabled {
+          color: $fc-middle;
+          cursor: default;
+        }
+
+        &:active:not(.disabled) {
+          color: $fc-primary;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,26 @@
-$fc-primary: #e0e0e0;
+$fc-primary:   #e0e0e0;
 $fc-secondary: #c0c0c0;
-$fc-middle: #808080;
+$fc-middle:    #808080;
 
-$fc-accent: #f0c000;
-$bg-accent: #ea0;
+$fc-accent:    #f0c000;
+$bg-accent:    #ea0;
+
+$list-fc:                      $fc-primary;
+$list-bg:                      #383838;
+
+$list-title-fc:                #000;
+$list-title-bg:                $fc-primary;
+
+$list-nav-fc:                  $fc-secondary;
+$list-nav-selected-fc:         $fc-accent;
+
+$list-item-fc:                 $fc-primary;
+$list-item-bg:                 #484848;
+$list-item-hover-fc:           #000;
+$list-item-hover-bg:           $bg-accent;
+
+$list-item-primary-fc:         $fc-primary;
+$list-item-primary-hover-fc:   #000;
+
+$list-item-secondary-fc:       $fc-secondary;
+$list-item-secondary-hover-fc: #404040;

@@ -1,5 +1,7 @@
 ﻿@import "_colors";
 @import "_header";
+@import "_list";
+@import "_list-item-simple";
 
 * {
   box-sizing: border-box;
@@ -39,6 +41,7 @@ main {
   width: 640px;
   justify-content: center;
   align-items: flex-start;
+  margin: auto;
 }
 
 .feature-list {
