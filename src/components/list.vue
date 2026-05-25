@@ -1,6 +1,8 @@
 ﻿<template>
-  <div class="list" :class="{'is-loading': props.isLoading}">
-    <slot name="list-title" />
+  <div class="list" :class="{'is-loading': isLoading}">
+    <div class="list-title" v-if="$slots['list-title']">
+      <slot name="list-title" />
+    </div>
 
     <slot name="list-header" />
 

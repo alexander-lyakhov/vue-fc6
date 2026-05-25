@@ -2,7 +2,7 @@
     <section class="list-wrapper">
       <list :items="movies" :is-loading="isLoading">
         <template #list-title>
-          <div class="list-title">Simple list</div>
+          Simple list
         </template>
 
         <template #list-body="{ item }">
@@ -10,7 +10,10 @@
         </template>
 
         <template #list-footer>
-          <list-paging v-model="paginationParams" @update:modelValue="getData" />
+          <list-paging
+            v-model="paginationParams"
+            @update:modelValue="getData"
+          />
         </template>
       </list>
     </section>
@@ -35,12 +38,12 @@
 
 <script setup lang="ts">
   // @@@ js @@
-  import { ref, reactive, computed, onMounted } from 'vue'
-  import List                                   from '@/components/list.vue'
-  import ListItemSimple                         from '@/components/list-item-simple.vue'
+  import { ref, computed, onMounted }   from 'vue'
+  import List                           from '@/components/list.vue'
+  import ListItemSimple                 from '@/components/list-item-simple.vue'
   // import ListItemDetailed                       from '@/components/list-item-detailed.vue'
-  import ListPaging                             from '@/components/list-paging.vue'
-  import type { Movie, ListPagination }         from '@/types'
+  import ListPaging                     from '@/components/list-paging.vue'
+  import type { Movie, ListPagination } from '@/types'
 
   const isLoading = ref<boolean>(false)
   const movies = ref<Movie[] | null>(null)

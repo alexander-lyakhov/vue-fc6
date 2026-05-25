@@ -13,15 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +33 src/App.vue
+badd +1 src/App.vue
 badd +18 E:/Develop/Web/.Vue/vue-FC-6/src/components/header-nav.vue
-badd +9 E:/Develop/Web/.Vue/vue-FC-6/src/components/selector.vue
-badd +59 src/views/ex1.vue
+badd +13 src/views/ex1.vue
 badd +18 E:/Develop/Web/.Vue/vue-FC-6/src/components/list.vue
 badd +1 src/components/list-paging.vue
 argglobal
 %argdel
-tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
@@ -39,11 +37,11 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 33 - ((28 * winheight(0) + 19) / 39)
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 33
+keepjumps 1
 normal! 0
 tabnext
 edit src/views/ex1.vue
@@ -59,12 +57,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 59 - ((20 * winheight(0) + 19) / 39)
+let s:l = 13 - ((12 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 59
-normal! 031|
+keepjumps 13
+normal! 017|
 tabnext
 edit src/components/list-paging.vue
 let s:save_splitbelow = &splitbelow
@@ -137,7 +135,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 18
-normal! 033|
+normal! 030|
 tabnext
 edit E:/Develop/Web/.Vue/vue-FC-6/src/components/header-nav.vue
 argglobal
@@ -158,26 +156,6 @@ keepjumps exe s:l
 normal! zt
 keepjumps 17
 normal! 0
-tabnext
-edit E:/Develop/Web/.Vue/vue-FC-6/src/components/selector.vue
-argglobal
-balt src/App.vue
-setlocal foldmethod=manual
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 9
-normal! 03|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
