@@ -1,0 +1,45 @@
+﻿.list-item.detailed {
+  background: $list-item-bg;
+
+  &:not(last-child) {
+    margin: 0 0 2px;
+  }
+
+  a {
+    border: 2px solid transparent;
+    display: block;
+    padding: 0.25rem .5rem;
+
+    span {
+      display: block;
+      line-height: 1.75rem;
+
+      &.line1 {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      &.line2 {
+        font-size: .75rem;
+        color: $list-item-secondary-fc;
+      }
+    }
+
+    &:hover {
+      color: $list-item-hover-fc;
+      background: $list-item-hover-bg;
+
+      // background: lighten(map.get($bg, "list-item"), 6);
+      /*background: $list-item-bg;
+      border-left: 4px solid $fc-accent;
+      padding-left: 1rem;*/
+
+      .line2 {
+        color: $list-item-secondary-hover-fc;
+      }
+    }
+  }
+}

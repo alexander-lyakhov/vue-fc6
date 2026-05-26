@@ -1,14 +1,13 @@
 ﻿<template>
-  <li class="list-item simple" :key="props.item.id">
+  <li class="list-item simple" :key="item.id">
     <a href="#">{{ item.title }}</a>
   </li>
 </template>
 
 <script setup lang="ts">
   // @@@ @js@
-  import { ref } from 'vue';
-
-  const props = defineProps<{ item: object }>();
+  import type { Movie } from '@/types'
+  const props = defineProps<{ item: Movie }>();
 </script>
 
 <style lang="scss" scoped>

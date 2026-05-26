@@ -17,11 +17,11 @@
         </template>
       </list>
     </section>
-    <!--
+
     <section class="list-wrapper">
-      <list :items="movies.data" :is-loading="isLoading">
+      <list :items="movies" :is-loading="isLoading">
         <template #list-title>
-          <div class="list-title">Detailed list</div>
+          Detailed list
         </template>
 
         <template #list-body="{ item }">
@@ -29,11 +29,13 @@
         </template>
 
         <template #list-footer>
-          <list-paging v-model="pagingConfig" />
+          <list-paging
+            v-model="paginationParams"
+            @update:modelValue="getData"
+          />
         </template>
       </list>
     </section>
-    -->
 </template>
 
 <script setup lang="ts">
@@ -41,7 +43,7 @@
   import { ref, computed, onMounted }   from 'vue'
   import List                           from '@/components/list.vue'
   import ListItemSimple                 from '@/components/list-item-simple.vue'
-  // import ListItemDetailed                       from '@/components/list-item-detailed.vue'
+  import ListItemDetailed               from '@/components/list-item-detailed.vue'
   import ListPaging                     from '@/components/list-paging.vue'
   import type { Movie, ListPagination } from '@/types'
 
