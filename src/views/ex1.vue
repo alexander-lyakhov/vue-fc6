@@ -47,8 +47,8 @@
   import ListPaging                     from '@/components/list-paging.vue'
   import type { Movie, ListPagination } from '@/types'
 
-  const isLoading = ref<boolean>(false)
-  const movies = ref<Movie[] | null>(null)
+  const isLoading        = ref<boolean>(false)
+  const movies           = ref<Movie[] | null>(null)
   const paginationParams = ref<ListPagination>({
     offset: 0,
     limit: 12,

@@ -4,6 +4,11 @@ export type Page = {
   description: string;
 }
 
+export type ListType = {
+  title: string;
+  value: string;
+}
+
 export const pages: Page[] = [
   {
     title: 'Home',
@@ -27,7 +32,7 @@ export const pages: Page[] = [
   },
 ];
 
-export const listTypes = [
+export const listTypes: ListType[] = [
   {
     title: 'Simple view',
     value: 'simple',
