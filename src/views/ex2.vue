@@ -13,21 +13,25 @@
     </template>
 
     <template #list-footer>
-      <list-paging v-model="movies.paginationParams" @update:modelValue="movies.getData" />
+      <list-paging
+        v-model="movies.paginationParams"
+        @update:modelValue="movies.getData"
+      />
     </template>
   </list>
 </template>
 
 <script setup lang="ts">
   // @@@ @js@
-  import { ref, reactive, computed, onMounted, type Component } from 'vue';
-  import list                                                   from '@/components/list.vue'
-  import ListNav                                                from '@/components/list-nav.vue'
-  import ListPaging                                             from '@/components/list-paging.vue'
-  import ListItemSimple                                         from '@/components/list-item-simple.vue'
-  import ListItemDetailed                                       from '@/components/list-item-detailed.vue'
-  import useMovies                                              from '@/composable/use-movies'
-  import { listTypes, type ListType }                           from '@/defs'
+  import { ref, reactive, computed, onMounted } from 'vue';
+  import type { Component }                     from 'vue';
+  import list                                   from '@/components/list.vue'
+  import ListNav                                from '@/components/list-nav.vue'
+  import ListPaging                             from '@/components/list-paging.vue'
+  import ListItemSimple                         from '@/components/list-item-simple.vue'
+  import ListItemDetailed                       from '@/components/list-item-detailed.vue'
+  import useMovies                              from '@/composable/use-movies'
+  import { listTypes, type ListType }           from '@/defs'
 
   // @@@ data definition
   //--------------------------------------------------------------------------
