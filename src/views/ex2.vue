@@ -1,11 +1,9 @@
 ﻿<template>
   <pre>{{ selectedListTypeIndex }}</pre>
   <list :items="movies" :is-loading="isLoading">
-    <!--
     <template #list-title>
-      {{ listTitle }}
+      {{ title }}
     </template>
-    -->
 
     <template #list-header>
       <list-nav v-model="selectedListTypeIndex" :options="listTypes" />
@@ -65,8 +63,9 @@
   /***
   **** @@@ Computed
   ***/
-  const url  = computed(() => `https://my.api.mockaroo.com/movies.json?key=203c6440&offset=${paginationParams.value.offset}`)
-  const view = computed(() => views[`list-item-${(listTypes[selectedListTypeIndex.value] as ListType).value}`])
+  const url   = computed(() => `https://my.api.mockaroo.com/movies.json?key=203c6440&offset=${paginationParams.value.offset}`)
+  const view  = computed(() => views[`list-item-${(listTypes[selectedListTypeIndex.value] as ListType).value}`])
+  const title = computed(() => `${(listTypes[selectedListTypeIndex.value] as ListType).title}`)
 
   /***
   **** @@@ Methods
