@@ -18,8 +18,6 @@ export function useMovies() {
     data.value = await fetch(url.value).then(res => res.json())
     paginationParams.value.total = 128
     isLoading.value = false
-
-    console.log(data.value)
   }
 
   return {

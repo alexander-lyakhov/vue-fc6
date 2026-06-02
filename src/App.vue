@@ -23,7 +23,8 @@
   import Home                              from '@/views/home.vue'
   import Ex1                               from '@/views/ex1.vue'
   import Ex2                               from '@/views/ex2.vue'
-  import { pages}                          from '@/defs';
+  import Ex3                               from '@/views/ex3.vue'
+  import { pages }                         from '@/defs';
 
   const selectedPageIndex = ref<number>(0);
 
@@ -31,6 +32,7 @@
     home: Home,
     ex1: Ex1,
     ex2: Ex2,
+    ex3: Ex3,
   }
 
   const selectedPage = computed(() => pages[selectedPageIndex.value])

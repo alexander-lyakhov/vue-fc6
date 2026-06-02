@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="list-paging">
     <div>
       <a href="#" :class="{disabled: flags.BOF}" @click.prevent="prev">Prev</a>
