@@ -5,7 +5,7 @@
 <script setup lang="ts">
   // @@@ @js@
   import { reactive, onMounted } from 'vue';
-  import useMovies                    from '@/composable/use-movies'
+  import useMovies               from '@/composable/use-movies'
 
   const movies = reactive(useMovies())
 
