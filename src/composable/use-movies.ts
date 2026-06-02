@@ -20,12 +20,24 @@ export function useMovies() {
     isLoading.value = false
   }
 
+  function getNext() {
+    paginationParams.value.offset += paginationParams.value.limit
+    getData()
+  }
+
+  function getPrev() {
+    paginationParams.value.offset -= paginationParams.value.limit
+    getData()
+  }
+
   return {
     data,
     isLoading,
     paginationParams,
     url,
     getData,
+    getNext,
+    getPrev,
   }
 }
 

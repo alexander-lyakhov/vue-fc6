@@ -14,6 +14,10 @@
   import type { ListPagination } from '@/types'
 
   const model = defineModel<ListPagination>()
+  const emit = defineEmits<{
+    (e: 'prev'): void,
+    (e: 'next'): void,
+  }>()
 
   /**
   *** @@@ Computed
@@ -44,6 +48,7 @@
         limit,
         total,
       }
+      emit('prev')
     }
   }
 
@@ -59,6 +64,7 @@
         limit,
         total,
       }
+      emit('next')
     }
   }
 </script>
