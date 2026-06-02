@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="list-nav">
     <selector v-bind="$attrs" v-slot="{ isSelected, toggleSelect }">
       <div ref="list-nav" class="list-nav__menu">
@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
   import selector          from '@/components/selector.vue'
-  import type { ListType } from '@/types'
+  import type { ListType } from '@/defs'
 
   const props = defineProps<{
     options: ListType[]
