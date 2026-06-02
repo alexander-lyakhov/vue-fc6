@@ -1,29 +1,27 @@
 ﻿<template>
   <main>
     <dataset v-slot="movies">
-      <template v-if="movies">
-        <list :items="movies.data" :is-loading="movies.isLoading">
-          <template #list-title>
-            {{ view.title }}
-          </template>
+      <list :items="movies.data" :is-loading="movies.isLoading">
+        <template #list-title>
+          {{ view.title }}
+        </template>
 
-          <template #list-header>
-            <list-nav v-model="view.selectedListTypeIndex" :options="listTypes" />
-          </template>
+        <template #list-header>
+          <list-nav v-model="view.selectedListTypeIndex" :options="listTypes" />
+        </template>
 
-          <template #list-body="{ item }">
-            <component :is="view.component" :item="item" />
-          </template>
+        <template #list-body="{ item }">
+          <component :is="view.component" :item="item" />
+        </template>
 
-          <template #list-footer>
-            <list-paging
-              v-model="movies.paginationParams"
-              @next="movies.getNext"
-              @prev="movies.getPrev"
-            />
-          </template>
-        </list>
-      </template>
+        <template #list-footer>
+          <list-paging
+            v-model="movies.paginationParams"
+            @next="movies.getNext"
+            @prev="movies.getPrev"
+          />
+        </template>
+      </list>
     </dataset>
   </main>
 </template>

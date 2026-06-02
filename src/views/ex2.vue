@@ -31,13 +31,8 @@
   import useView                 from '@/composable/use-view'
   import { listTypes }           from '@/defs'
 
-  // @@@ data definition
-  //--------------------------------------------------------------------------
   const movies = reactive(useMovies())
   const view = reactive(useView())
 
-  /***
-  **** @@@ Hooks
-  ***/
   onMounted(movies.getData)
 </script>
